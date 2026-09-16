@@ -1,40 +1,45 @@
 /* ==========================================================================
    VARIABLES DE DISEÑO
-   Paleta EPN — azul oscuro, rojo oscuro, amarillo y beige.
+   Paleta AZUL ELÉCTRICO — azul, negro, blanco y tonalidades de gris.
    ========================================================================== */
 :root {
   /* Colores principales */
-  --bg: #F5F0E6;
-  --bg-alt: #EDE3D2;
-  --surface: #FFFDF8;
+  --bg: #FFFFFF;
+  --bg-alt: #F1F3F5;
+  --surface: #FFFFFF;
 
   /* Textos */
-  --ink: #252525;
-  --ink-soft: #626262;
+  --ink: #111111;
+  --ink-soft: #5C636B;
 
-  /* Identidad EPN */
-  --accent: #17365D;          /* Azul oscuro */
-  --accent-2: #9B2C2C;        /* Rojo oscuro */
-  --accent-soft: #F3E8C5;     /* Amarillo suave */
+  /* Identidad azul eléctrico */
+  --accent: #0066FF;
+  --accent-2: #00A3FF;
+  --accent-soft: #E5F0FF;
 
   /* Detalles */
-  --rule: #D6C8B4;
+  --rule: #D9DEE3;
   --white: #FFFFFF;
-  --yellow: #E8B923;
-  --red-light: #B33A3A;
 
-  /* Degradado azul */
+  /* Escala de grises */
+  --gray-dark: #20242A;
+  --gray-medium: #6B737C;
+  --gray-light: #EEF1F4;
+  --black: #0A0A0A;
+
+  /* Degradado azul eléctrico */
   --gradient-brand: linear-gradient(
     120deg,
-    #17365D 0%,
-    #214A78 100%
+    #0047CC 0%,
+    #0066FF 50%,
+    #00A3FF 100%
   );
 
-  /* Degradado amarillo para botones */
+  /* Degradado para botones */
   --gradient-cta: linear-gradient(
     120deg,
-    #E8B923 0%,
-    #D9A915 100%
+    #0066FF 0%,
+    #00A3FF 100%
   );
 
   /* Tipografía */
@@ -59,7 +64,7 @@
   left: -999px;
   top: 0;
   z-index: 100;
-  background: var(--accent-2);
+  background: var(--black);
   color: var(--white);
   padding: 0.6rem 1rem;
   border-radius: 0 0 8px 0;
@@ -106,7 +111,7 @@ a:focus-visible {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent-2);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -148,8 +153,8 @@ p {
    ENCABEZADO / NAVEGACIÓN
    ========================================================================== */
 .site-header {
-  border-bottom: 2px solid var(--accent-2);
-  background: rgba(245, 240, 230, 0.96);
+  border-bottom: 3px solid var(--accent);
+  background: rgba(255, 255, 255, 0.97);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -167,7 +172,7 @@ p {
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.2rem;
-  color: var(--ink);
+  color: var(--black);
   letter-spacing: -0.01em;
 }
 
@@ -178,15 +183,15 @@ p {
   background-clip: text;
 }
 
-/* El "/" del logo conserva el color rojo */
+/* El "/" del logo conserva el azul eléctrico */
 .site-logo {
-  color: var(--accent-2);
+  color: var(--accent);
 }
 
 .nav-toggle {
   display: none;
   background: var(--surface);
-  border: 1px solid var(--accent-2);
+  border: 1px solid var(--accent);
   border-radius: 8px;
   padding: 0.4rem 0.6rem;
   cursor: pointer;
@@ -209,7 +214,7 @@ p {
 
 .main-nav a {
   display: inline-block;
-  color: var(--ink-soft);
+  color: var(--gray-medium);
   font-family: var(--font-display);
   font-size: 0.82rem;
   font-weight: 700;
@@ -226,14 +231,14 @@ p {
   right: 0.75rem;
   bottom: 0.2rem;
   height: 2px;
-  background: var(--accent-2);
+  background: var(--accent);
   transform: scaleX(0);
   transition: transform 0.25s ease;
 }
 
 .main-nav a[aria-current="page"],
 .main-nav a:hover {
-  color: var(--accent-2);
+  color: var(--accent);
 }
 
 .main-nav a[aria-current="page"]::after,
@@ -243,7 +248,7 @@ p {
 
 /* Botón de contacto */
 .main-nav li:last-child a {
-  background: var(--accent-2);
+  background: var(--black);
   color: var(--white);
   border-radius: 999px;
   padding: 0.5rem 1.1rem;
@@ -254,7 +259,7 @@ p {
 }
 
 .main-nav li:last-child a:hover {
-  background: var(--red-light);
+  background: var(--accent);
   color: var(--white);
   opacity: 1;
 }
@@ -303,13 +308,13 @@ p {
   padding: var(--space-5) 0 calc(var(--space-5) + var(--space-2));
   background: var(--gradient-brand);
   color: var(--white);
-  border-bottom: 6px solid var(--accent-2);
+  border-bottom: 6px solid var(--black);
 }
 
 .hero-eyebrow {
   display: inline-block;
   color: var(--white);
-  background: var(--accent-2);
+  background: var(--black);
   border-radius: 999px;
   padding: 0.3rem 0.9rem;
   font-size: 0.85rem;
@@ -323,7 +328,7 @@ p {
 
 .hero p.lead {
   font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.9);
   max-width: 60ch;
 }
 
@@ -341,7 +346,7 @@ p {
 
 .section-alt {
   background: var(--bg-alt);
-  border-top: 4px solid var(--accent-2);
+  border-top: 4px solid var(--accent);
 }
 
 .section-head {
@@ -349,7 +354,7 @@ p {
 }
 
 .section-head h2 {
-  color: var(--accent);
+  color: var(--black);
   position: relative;
   padding-bottom: 0.6rem;
 }
@@ -359,7 +364,7 @@ p {
   display: block;
   width: 55px;
   height: 4px;
-  background: var(--accent-2);
+  background: var(--accent);
   margin-top: 0.6rem;
   border-radius: 2px;
 }
@@ -378,10 +383,10 @@ p {
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   padding: var(--space-3);
-  box-shadow: 0 4px 18px rgba(23, 54, 93, 0.08);
+  box-shadow: 0 4px 18px rgba(10, 10, 10, 0.08);
   position: relative;
   overflow: hidden;
-  border-top: 4px solid var(--accent-2);
+  border-top: 4px solid var(--accent);
 }
 
 .research-card::before {
@@ -391,7 +396,7 @@ p {
   left: 0;
   width: 7px;
   height: 100%;
-  background: var(--accent);
+  background: var(--black);
 }
 
 .research-card h3 {
@@ -419,8 +424,8 @@ p {
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   padding: var(--space-3);
-  box-shadow: 0 4px 18px rgba(23, 54, 93, 0.08);
-  border-top: 4px solid var(--accent-2);
+  box-shadow: 0 4px 18px rgba(10, 10, 10, 0.08);
+  border-top: 4px solid var(--black);
 }
 
 .member-photo {
@@ -451,11 +456,11 @@ p {
   font-weight: 700;
   font-size: 1.05rem;
   margin-bottom: 0.15rem;
-  color: var(--accent);
+  color: var(--black);
 }
 
 .member-role {
-  color: var(--accent-2);
+  color: var(--accent);
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: var(--space-1);
@@ -492,7 +497,7 @@ p {
 }
 
 .pub-year {
-  color: var(--accent-2);
+  color: var(--accent);
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.4rem;
@@ -562,15 +567,15 @@ p {
 .form-field input:focus,
 .form-field textarea:focus {
   outline: none;
-  border-bottom-color: var(--accent-2);
+  border-bottom-color: var(--accent);
 }
 
-/* Botón amarillo */
+/* Botón azul eléctrico */
 .btn {
   display: inline-block;
   background: var(--gradient-cta);
-  color: #252525;
-  border: 2px solid #C99D0E;
+  color: var(--white);
+  border: 2px solid var(--accent);
   padding: 0.75rem 1.6rem;
   border-radius: 999px;
   font-family: var(--font-display);
@@ -579,15 +584,16 @@ p {
   letter-spacing: 0.02em;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 7px 18px rgba(155, 44, 44, 0.20);
+  box-shadow: 0 7px 18px rgba(0, 102, 255, 0.25);
 }
 
 .btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 9px 22px rgba(155, 44, 44, 0.30);
+  box-shadow: 0 9px 22px rgba(0, 102, 255, 0.35);
   text-decoration: none;
   opacity: 1;
-  background: #F0C632;
+  background: var(--black);
+  color: var(--white);
 }
 
 .form-note {
@@ -601,7 +607,7 @@ p {
   padding: var(--space-2);
   border-radius: 8px;
   background: var(--accent-soft);
-  border-left: 4px solid var(--accent-2);
+  border-left: 4px solid var(--accent);
   color: var(--ink);
   font-size: 0.9rem;
 }
@@ -618,8 +624,8 @@ p {
 }
 
 .team-category-title {
-  color: var(--accent);
-  border-bottom: 3px solid var(--accent-2);
+  color: var(--black);
+  border-bottom: 3px solid var(--accent);
   display: inline-block;
   padding-bottom: var(--space-1);
   margin-bottom: var(--space-3);
@@ -638,7 +644,7 @@ p {
 
 .alumni-name {
   font-weight: 700;
-  color: var(--accent);
+  color: var(--black);
 }
 
 .alumni-periodo {
@@ -663,14 +669,14 @@ p {
 .news-item {
   background: var(--surface);
   border: 1px solid var(--rule);
-  border-left: 5px solid var(--accent-2);
+  border-left: 5px solid var(--accent);
   border-radius: var(--radius);
   padding: var(--space-3);
 }
 
 .news-date {
   display: block;
-  color: var(--accent-2);
+  color: var(--accent);
   font-weight: 600;
   font-size: 0.85rem;
   margin-bottom: 0.25rem;
@@ -678,7 +684,7 @@ p {
 }
 
 .news-title {
-  color: var(--accent);
+  color: var(--black);
   margin-bottom: 0.25rem;
 }
 
@@ -702,19 +708,19 @@ p {
 .social-links a {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--accent-2);
+  color: var(--accent);
   border-bottom: none;
   background: var(--accent-soft);
-  border: 1px solid #D8C77C;
+  border: 1px solid #B8D4FF;
   border-radius: 999px;
   padding: 0.35rem 0.9rem;
 }
 
 .social-links a:hover {
   text-decoration: none;
-  background: var(--accent-2);
+  background: var(--accent);
   color: var(--white);
-  border-color: var(--accent-2);
+  border-color: var(--accent);
 }
 
 /* ==========================================================================
@@ -730,10 +736,10 @@ p {
    PIE DE PÁGINA
    ========================================================================== */
 .site-footer {
-  border-top: 4px solid var(--accent-2);
+  border-top: 4px solid var(--accent);
   padding: var(--space-3) 0;
-  background: #E9DFCE;
-  color: var(--ink-soft);
+  background: var(--gray-dark);
+  color: #D9DEE3;
   font-size: 0.85rem;
 }
 
@@ -763,13 +769,13 @@ p {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
-  border: 2px solid #C99D0E;
+  border: 2px solid var(--accent);
   background: var(--gradient-cta);
-  color: #252525;
+  color: var(--white);
   font-size: 1.2rem;
   line-height: 1;
   cursor: pointer;
-  box-shadow: 0 7px 18px rgba(23, 54, 93, 0.25);
+  box-shadow: 0 7px 18px rgba(0, 102, 255, 0.25);
   z-index: 20;
   transition: transform 0.2s ease;
 }
