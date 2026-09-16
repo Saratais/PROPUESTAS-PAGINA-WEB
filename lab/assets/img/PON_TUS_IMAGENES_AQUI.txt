@@ -1,0 +1,14 @@
+Coloca aquí las fotos de los integrantes y cualquier otra imagen del sitio
+(logo, fotos del laboratorio, etc).
+
+Luego, en js/contenido.js, en cada integrante, escribe la ruta relativa,
+por ejemplo:
+
+  foto: "assets/img/ana-torres.jpg"
+
+Recomendaciones:
+- Usa fotos cuadradas (mismo ancho y alto) para que se vean bien en las
+  tarjetas circulares/cuadradas del equipo.
+- Comprime las imágenes antes de subirlas (por ejemplo con squoosh.app)
+  para que la página cargue rápido cuando compres el dominio.
+- Nombres de archivo sin espacios ni tildes: usa guiones, ej. ana-torres.jpg

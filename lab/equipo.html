@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipo — [Nombre del Laboratorio]</title>
+
+  <!-- Ver nota sobre estas etiquetas en index.html: se completan por
+       JavaScript con los datos de contenido.js. -->
+  <meta name="description" content="">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="site-logo" href="index.html"><span>Lab</span>/ <span data-lab="nombre"></span></a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="equipo.html">Equipo</a></li>
+          <li><a href="publicaciones.html">Publicaciones</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero">
+      <div class="container">
+        <h1>Equipo</h1>
+        <p class="lead">
+          [Descripción breve del equipo: cuántas personas lo integran, qué
+          roles hay, o cómo está organizado el laboratorio.]
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Este contenedor lo llena main.js a partir de INTEGRANTES en
+             js/contenido.js, agrupando automáticamente por "categoria"
+             (ver CATEGORIAS_EQUIPO). Para agregar/quitar personas, edita
+             ese archivo — no esta página. -->
+        <div class="team-grid" id="lista-equipo">
+          <p class="empty-state">Cargando...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Egresados: sección aparte, formato más simple (sin foto grande).
+         main.js la oculta sola si EGRESADOS está vacío en contenido.js. -->
+    <section class="section section-alt" id="seccion-egresados" hidden>
+      <div class="container">
+        <div class="section-head">
+          <h2>Egresados</h2>
+        </div>
+        <ul class="alumni-list" id="lista-egresados"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="anio-actual"></span> <span data-lab="nombre"></span></span>
+      <span data-lab="correo"></span>
+    </div>
+  </footer>
+
+  <script src="js/contenido.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

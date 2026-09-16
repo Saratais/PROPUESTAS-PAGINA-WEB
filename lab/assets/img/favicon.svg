@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Favicon genérico de marcador de posición: fondo verde bosque
+       (--accent en style.css) con la letra "L" en serif, en línea con
+       el logo "Lab/ [Nombre]" del encabezado. Reemplázalo cuando tengas
+       un logo real del laboratorio. -->
+  <rect width="100" height="100" rx="20" fill="#2f5233"/>
+  <text x="50" y="68" font-family="Georgia, 'Times New Roman', serif"
+        font-size="58" fill="#ffffff" text-anchor="middle">L</text>
+</svg>

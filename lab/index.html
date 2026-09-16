@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Nombre del Laboratorio]</title>
+
+  <!-- Descripción y etiquetas Open Graph: se completan por JavaScript
+       (ver actualizarMetaEtiquetas() en js/main.js) con los datos de
+       DATOS_LAB en contenido.js, así no hay que escribirlas a mano en
+       cada página. -->
+  <meta name="description" content="">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Favicon de marcador de posición (ver assets/img/favicon.svg).
+       Reemplaza ese archivo por el logo real cuando lo tengas. -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Enlace de accesibilidad: invisible hasta que se navega con Tab.
+       Permite saltar directo al contenido sin pasar por el menú. -->
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- ============ ENCABEZADO (igual en todas las páginas) ============ -->
+  <header class="site-header">
+    <div class="container">
+      <!-- El nombre del laboratorio en el logo se llena solo desde
+           DATOS_LAB.nombre (contenido.js) vía el atributo data-lab. -->
+      <a class="site-logo" href="index.html"><span>Lab</span>/ <span data-lab="nombre"></span></a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="equipo.html">Equipo</a></li>
+          <li><a href="publicaciones.html">Publicaciones</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- id="main-content" es el destino del enlace "Saltar al contenido
+       principal" de arriba, y agrupa semánticamente todo lo que no es
+       encabezado ni pie de página (mejor accesibilidad y SEO). -->
+  <main id="main-content">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container">
+        <p class="hero-eyebrow" data-lab="institucion"></p>
+        <h1 data-lab="nombre"></h1>
+        <p class="lead" data-lab="descripcion"></p>
+      </div>
+    </section>
+
+    <!-- ============ LÍNEAS DE INVESTIGACIÓN ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Líneas de investigación</h2>
+        </div>
+        <!-- Este contenedor lo llena main.js automáticamente a partir de
+             LINEAS_INVESTIGACION en js/contenido.js -->
+        <div class="research-grid" id="lineas-investigacion">
+          <p class="empty-state">Cargando...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NOTICIAS / ANUNCIOS ============ -->
+    <!-- main.js la llena a partir de NOTICIAS en js/contenido.js, ordenadas
+         de la más reciente a la más antigua, y la oculta sola si el
+         arreglo está vacío. -->
+    <section class="section" id="seccion-noticias" hidden>
+      <div class="container">
+        <div class="section-head">
+          <h2>Noticias</h2>
+        </div>
+        <div class="news-list" id="lista-noticias"></div>
+      </div>
+    </section>
+
+    <!-- ============ RESUMEN / LLAMADO A LA ACCIÓN ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2>¿Quieres colaborar con nosotros?</h2>
+        <p>
+          [Aquí puedes agregar un párrafo invitando a estudiantes, colaboradores
+          o instituciones a contactar al laboratorio, o a revisar las
+          publicaciones recientes.]
+        </p>
+        <p><a class="btn" href="contacto.html">Escríbenos</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ PIE DE PÁGINA (igual en todas las páginas) ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="anio-actual"></span> <span data-lab="nombre"></span></span>
+      <span data-lab="correo"></span>
+    </div>
+  </footer>
+
+  <script src="js/contenido.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
